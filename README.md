@@ -6,10 +6,10 @@ This repository contains all the exercises done by me to train for the Spain Ski
 
 The training is divided into the following parts:
 
-**Database** -> Exercises of creation, insertion and query of relational databases with MySQL database manager.
-**Frontend** -> Development of static and dynamic web pages to practice the design and implementation of Single Page Applications using HTML, CSS, Bootstrap, JavaScript and Angular.
-**Backend** -> Development and implementation of API Rest with PHP and Laravel.
-**Mock exam** -> Resolution of the tests of the web development modality in the last SpainSkills 2022 competition.
+**Database** -> Exercises of creation, insertion and query of relational databases with MySQL database manager.<br>
+**Frontend** -> Development of static and dynamic web pages to practice the design and implementation of Single Page Applications using HTML, CSS, Bootstrap, JavaScript and Angular.<br>
+**Backend** -> Development and implementation of API Rest with PHP and Laravel.<br>
+**Mock exam** -> Resolution of the tests of the web development modality in the last SpainSkills 2022 competition.<br>
 
 * *The technologies used are those imposed by the organization of the championship, they are not our own choice.*
 
