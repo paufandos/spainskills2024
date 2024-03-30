@@ -1,0 +1,208 @@
+:root {
+  --default-line-height: 1.75rem;
+  --default-font-size: 16px;
+  --h1-font-size: 3rem;
+  --h2-font-size: 2.5rem;
+  --h3-font-size: 2.25rem;
+  --h4-font-size: 2rem;
+  --h5-font-size: 1.75rem;
+  --h6-font-size: 1.5rem;
+  --heading-font-weight: bold;
+  --paragraph-font-size: 1.25rem;
+
+  --primary-color-100: #8deffc;
+  --primary-color-200: #61edfa;
+  --primary-color-300: #35f1f8;
+  --primary-color-400: #0af5f5;
+  --primary-color-500: #08c9bf;
+  --primary-color-600: #079d90;
+  --primary-color-700: #047163;
+  --primary-color-800: #02453a;
+  --primary-color-900: #011914;
+
+  --primary-color-with-opcity-1: #08c9bf21;
+  --primary-color-with-opcity-2: #08c9bf00;
+  --bg-primary-color-without-opcity-1: #012429;
+  --bg-primary-color-without-opcity-2: #00161d;
+
+  --secondary-color-100: #fcc68d;
+  --secondary-color-200: #faab61;
+  --secondary-color-300: #f88935;
+  --secondary-color-400: #f5680a;
+  --secondary-color-500: #c94c08;
+  --secondary-color-600: #9d3607;
+  --secondary-color-700: #712104;
+  --secondary-color-800: #451202;
+  --secondary-color-900: #190501;
+
+  --grey-color-100: #e6e6e6;
+  --grey-color-200: #cccccc;
+  --grey-color-300: #b3b3b3;
+  --grey-color-400: #999999;
+  --grey-color-500: #808080;
+  --grey-color-600: #666666;
+  --grey-color-700: #4d4d4d;
+  --grey-color-800: #333333;
+  --grey-color-900: #1a1a1a;
+
+  --white-color-100: #ffffff;
+  --white-color-200: #fcfcfc;
+  --white-color-300: #fafafa;
+  --white-color-400: #f7f7f7;
+  --white-color-500: #f5f5f5;
+  --white-color-600: #f2f2f2;
+  --white-color-700: #f0f0f0;
+  --white-color-800: #ededed;
+  --white-color-900: #ebebeb;
+
+  --black-color: #000000;
+
+  --red-dark-color: #742a2a;
+  --red-normal-color: #e53e3e;
+  --red-light-color: #feb2b2;
+
+  --green-dark-color: #22543d;
+  --green-normal-color: #38a169;
+  --green-light-color: #9ae6b4;
+
+  --blue-dark-color: #00244d;
+  --blue-normal-color: #006deb;
+  --blue-light-color: #8ac0ff;
+
+  --yellow-dark-color: #ce9909;
+  --yellow-normal-color: #f3d139;
+  --yellow-light-color: #fbf6b1;
+
+  --light-box-shadow-color: rgba(255, 255, 255, 0.35);
+  --dark-box-shadow-color: rgba(0, 0, 0, 0.15);
+
+  --padding-0: 0;
+  --padding-1: 4px;
+  --padding-2: 6px;
+  --padding-3: 8px;
+  --padding-4: 10px;
+  --padding-5: 12px;
+  --padding-6: 16px;
+  --padding-7: 20px;
+  --padding-8: 24px;
+  --padding-9: 32px;
+  --padding-10: 40px;
+  --padding-11: 48px;
+  --padding-12: 64px;
+  --padding-13: 80px;
+  --padding-14: 96px;
+  --padding-15: 128px;
+  --padding-16: 160px;
+  --padding-17: 192px;
+  --padding-18: 224px;
+  --padding-19: 256px;
+  --padding-20: 320px;
+
+  --margin-0: 0;
+  --margin-1: 4px;
+  --margin-2: 6px;
+  --margin-3: 8px;
+  --margin-4: 10px;
+  --margin-5: 12px;
+  --margin-6: 16px;
+  --margin-7: 20px;
+  --margin-8: 24px;
+  --margin-9: 32px;
+  --margin-10: 40px;
+  --margin-11: 48px;
+  --margin-12: 64px;
+  --margin-13: 80px;
+  --margin-14: 96px;
+  --margin-15: 128px;
+  --margin-16: 160px;
+  --margin-17: 192px;
+  --margin-18: 224px;
+  --margin-19: 256px;
+  --margin-20: 320px;
+  --margin-auto: auto;
+
+  --border-radius-0: 0;
+  --border-radius-1: 2px;
+  --border-radius-2: 4px;
+  --border-radius-3: 6px;
+  --border-radius-4: 8px;
+  --border-radius-5: 12px;
+  --border-radius-6: 16px;
+  --border-radius-full: 100%;
+
+  --gap-0: 0;
+  --gap-1: 4px;
+  --gap-2: 8px;
+  --gap-3: 16px;
+  --gap-4: 24px;
+  --gap-5: 32px;
+  --gap-6: 48px;
+
+  --width-auto: auto;
+  --width-0: 0;
+  --width-100: 100%;
+  --width-100-viewport: 100dvw;
+
+  --height-auto: auto;
+  --height-0: 0;
+  --height-100: 100%;
+  --height-100-viewport: 100dvh;
+}
+
+$gap-list: (
+  var(--gap-0),
+  var(--gap-1),
+  var(--gap-2),
+  var(--gap-3),
+  var(--gap-4),
+  var(--gap-5),
+  var(--gap-6)
+);
+
+$padding-list: (
+  var(--padding-0),
+  var(--padding-1),
+  var(--padding-2),
+  var(--padding-3),
+  var(--padding-4),
+  var(--padding-5),
+  var(--padding-6),
+  var(--padding-7),
+  var(--padding-8),
+  var(--padding-9),
+  var(--padding-10),
+  var(--padding-11),
+  var(--padding-12),
+  var(--padding-13),
+  var(--padding-14),
+  var(--padding-15),
+  var(--padding-16),
+  var(--padding-17),
+  var(--padding-18),
+  var(--padding-19),
+  var(--padding-20)
+);
+
+$margin-list: (
+  var(--margin-0),
+  var(--margin-1),
+  var(--margin-2),
+  var(--margin-3),
+  var(--margin-4),
+  var(--margin-5),
+  var(--margin-6),
+  var(--margin-7),
+  var(--margin-8),
+  var(--margin-9),
+  var(--margin-10),
+  var(--margin-11),
+  var(--margin-12),
+  var(--margin-13),
+  var(--margin-14),
+  var(--margin-15),
+  var(--margin-16),
+  var(--margin-17),
+  var(--margin-18),
+  var(--margin-19),
+  var(--margin-20)
+);

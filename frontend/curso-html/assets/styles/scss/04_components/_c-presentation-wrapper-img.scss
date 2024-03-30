@@ -1,0 +1,8 @@
+.c-presentation-wrapper-img {
+    width: 90%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+
+    border-radius: var(--border-radius-6);
+    @include box-shadow(var(--light-box-shadow-color));
+}

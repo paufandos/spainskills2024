@@ -1,0 +1,46 @@
+* {
+  min-width: var(--width-0);
+  font: inherit;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+img,
+video,
+svg {
+  display: block;
+  height: var(--height-auto);
+  max-width: var(--width-100);
+}
+
+body {
+  margin: var(--margin-0);
+  min-height: var(--height-100-viewport);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a {
+  text-decoration: none;
+}
+
+ol, li {
+  margin: var(--margin-0);
+  padding: var(--padding-0);
+  list-style: none;
+}

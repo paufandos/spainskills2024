@@ -1,0 +1,13 @@
+* {
+  scrollbar-color: var(--primary-color-700) var(--grey-color-100);
+  scrollbar-width: none;
+}
+
+body {
+  background-color: var(--bg-primary-color-without-opcity-2);
+  background-image: radial-gradient(
+    ellipse 80% 80% at 50% -20%,
+    var(--primary-color-with-opcity-1),
+    var(--primary-color-with-opcity-2)
+  );
+}

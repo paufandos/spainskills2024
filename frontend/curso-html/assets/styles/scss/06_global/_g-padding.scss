@@ -1,0 +1,31 @@
+.g--padding {
+  @for $padding-position from 1 through length($padding-list) {
+    $padding-order: $padding-position - 1;
+
+    padding: nth($padding-list, $padding-position);
+
+    &-inline-#{$padding-order} {
+      padding-inline: nth($padding-list, $padding-position);
+    }
+
+    &-block-#{$padding-order} {
+      padding-block: nth($padding-list, $padding-position);
+    }
+
+    &-top-#{$padding-order} {
+      padding-top: nth($padding-list, $padding-position);
+    }
+
+    &-bottom-#{$padding-order} {
+      padding-bottom: nth($padding-list, $padding-position);
+    }
+
+    &-left-#{$padding-order} {
+      padding-left: nth($padding-list, $padding-position);
+    }
+    
+    &-right-#{$padding-order} {
+      padding-right: nth($padding-list, $padding-position);
+    }
+  }
+}

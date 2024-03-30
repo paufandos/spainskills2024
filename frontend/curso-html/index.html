@@ -19,94 +19,211 @@
   <meta name="theme-color" content="#0077a8" />
 
   <link rel="shortcut icon" href="./assets/images/portfolio_photo.jpeg" type="image/jpg" />
-  <link rel="stylesheet" href="assets/styles/00_reset.css">
-  <link rel="stylesheet" href="./assets/styles/style.css">
+  <link rel="stylesheet" href="assets/styles/scss/main.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
-<body>
-  <header class="navbar">
-    <nav>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <i class="bi bi-braces-asterisk logo"></i>
-      <a href="#projects">About me</a>
-      <a href="https://github.com/paufandos" target="_blank" rel="noreferrer">GitHub</a>
+<body class="">
+  <header class="l-fixed-header l-flex l-flex--centered">
+    <nav class="l-flex l-flex--centered l-flex--gap-6 c-navbar">
+      <a class="c-navbar__item" href="#experience">Experience</a>
+      <a class="c-navbar__item" href="#projects">Projects</a>
+      <a class="c-navbar__item" href="#studies">Studies</a>
+      <a class="c-navbar__item" href="#presentation"><i class="c-navbar__item--logo bi bi-braces-asterisk"></i></a>
+      <a class="c-navbar__item" href="#awards">Awards</a>
+      <a class="c-navbar__item" href="#projects">About me</a>
+      <a class="c-navbar__item" href="https://github.com/paufandos" target="_blank" rel="noreferrer">GitHub</a>
     </nav>
   </header>
-  <main>
-    <section class="presentation">
-      <div class="availability-wrapper">
-        <img src="./assets/images/portfolio_photo.jpeg" alt="Pau Fandos Portfolio Photo Image" />
-        <a href="https://www.soprasteria.es/" class="availability ">Working on Sopra Steria</a>
+  <main class="l-main-centered-content">
+    <section id="presentation" class="c-section">
+      <aside class="l-flex l-flex--vertical-centered l-flex--gap-4">
+        <img class="c-profile-img" src="./assets/images/profile_photo.jpg" alt="Pau Fandos Portfolio Photo Image" />
+        <a href="https://www.soprasteria.es/" class="c-badge--hover-animation" target="_blank" rel="noopener">
+          <div class="l-flex l-flex-vertical-centered">
+            <span class="c-border-animation__container">
+              <span class="c-border-animation__effect"></span>
+              <div class="c-badge c-badge--bg-dark">Working on Sopra Steria</div>
+            </span>
+          </div>
+        </a>
+      </aside>
+
+      <h1>Hey, I'm <span class="c-remarkable">{ Pau Fandos }</span></h1>
+      <div class="l-flex l-flex--gap-6">
+        <div class="l-flex l-flex--direction-column l-flex--space-between">
+          <p>
+            <span class="c-remarkable c-remarkable--secondary">Software developer</span> and passionate about <span
+              class="c-remarkable c-remarkable--secondary">programming
+              and technology</span> from Valencia,
+            Spain.
+            <br>Specialized in the <span class="c-remarkable c-remarkable--secondary">careful</span> development of web
+            applications.
+          </p>
+
+          <aside class="l-flex l-flex--vertical-centered l-flex--gap-5">
+            <a href="mailto:fandosgorrispau@gmail.com" class="c-badge"><i class="bi bi-envelope-arrow-up-fill"></i>
+              Contactame</a>
+            <a href="https://es.linkedin.com/in/paufandos" target="_blank" rel="noopener" class="c-badge"><i
+                class="bi bi-linkedin"></i> Linkedn</a>
+            <a href="https://github.com/paufandos" target="_blank" rel="noopener" class="c-badge"><i
+                class="bi bi-github"></i> Github</a>
+          </aside>
+        </div>
+        <img class="c-presentation-wrapper-img" src="assets/images/presentation_wrapper.jpg"
+          alt="Image of me competing in the CVSkills2023 championship.">
       </div>
 
-      <h1>Hey, I'm <span>{ Pau Fandos }</span></h1>
-      <p class="description">
-        I'm a 21 year old guy, eager to <span>develop myself</span> in the working world and grow professionally,
-        passionate about
-        <span>technology and programming</span>, I am very curious and I like to investigate the why of things. I am
-        able to <span>work in
-          a team</span> and contribute my knowledge to improve it.
-      </p>
-      <cite>"Any fool can write code that a computer can understand. Good programmers write code that humans can
-        understand." - Martin Fowler</cite>
     </section>
 
-    <section id="experience">
+    <section id="experience" class="c-section">
       <h2><i class="bi bi-laptop"></i> Experience</h2>
-      <ul>
-        <li>Sopra Steria - 2023</li>
-        <li>Imagina ITS - 2021</li>
+      <ol class="c-timeline">
+        <li class="c-timeline__line">
+          <div class="l-timeline">
+            <div>
+              <div class="c-timeline__point">·</div>
+              <h3>Software Developer</h3>
+              <h4>Sopra Steria</h4>
+              <p>March 2023 - Currently</p>
+            </div>
+            <div>
+              <p>Planning, analysis, design and software development in a leading consulting firm, where I contributed
+                to a variety of projects, with different clients, under agile methodologies such as Scrum and Kanban. My
+                focus on Test Driven Development (TDD) and the application of best practices, clean code and design
+                patterns guaranteed the quality and scalability of the projects in which I participated. </p>
+              <aside class="l-flex l-flex--vertical-centered l-flex--wrap l-flex--gap-2 g--padding-top-8">
+                <a href="https://www.oracle.com/es/database/" target="_blank" rel="noopener" class="c-badge">SQL</a>
+                <a href="https://camunda.com/" target="_blank" rel="noopener" class="c-badge">Camunda</a>
+                <a href="https://www.java.com/es/" class="c-badge">Java</a>
+                <a href="https://kotlinlang.org/" target="_blank" rel="noopener" class="c-badge">Kotlin</a>
+                <a href="https://spring.io/" target="_blank" rel="noopener" class="c-badge">Spring</a>
+                <a href="https://www.rabbitmq.com/" target="_blank" rel="noopener" class="c-badge">RabbitMQ</a>
+                <a href="https://www.jenkins.io/" target="_blank" rel="noopener" class="c-badge">Jenkins</a>
+                <a href="https://www.redhat.com/es" target="_blank" rel="noopener" class="c-badge">RedHat</a>
+                <a href="https://www.atlassian.com/es/software/jira" target="_blank" rel="noopener"
+                  class="c-badge">Jira</a>
+                <a href="https://angular.io/" target="_blank" rel="noopener" class="c-badge">Angular</a>
+              </aside>
+            </div>
+          </div>
+        </li>
+        <li class="c-timeline__line">
+          <div class="l-timeline">
+            <div>
+              <div class="c-timeline__point">·</div>
+              <h3>Web Developer</h3>
+              <h4>Imagina ITS</h4>
+              <p>June 2022 - September 2022</p>
+            </div>
+            <div>
+              <p>Design and development of web applications focusing on accessibility, usability and user experience,
+                with the latest technologies for web development.</p>
+              <aside class="l-flex l-flex--vertical-centered l-flex--wrap l-flex--gap-2 g--padding-top-8">
+                <a href="https://www.mysql.com/" target="_blank" rel="noopener" class="c-badge">MySQL</a>
+                <a href="https://www.php.net/" target="_blank" rel="noopener" class="c-badge">PHP</a>
+                <a href="https://www.phpmyadmin.net/" class="c-badge">PhpMyAdmin</a>
+                <a href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank" rel="noopener"
+                  class="c-badge">JavaScript</a>
+                <a href="https://getbootstrap.com/" target="_blank" rel="noopener" class="c-badge">Bootstrap</a>
+                <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank" rel="noopener" class="c-badge">
+                  HTML</a>
+                <a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank" rel="noopener" class="c-badge">
+                  CSS</a>
+              </aside>
+            </div>
+          </div>
+        </li>
+        <li class="c-timeline__line">
+          <div class="l-timeline">
+            <div>
+              <div class="c-timeline__point">·</div>
+              <h3>IT Support Technician</h3>
+              <h4>Imagina ITS</h4>
+              <p>March 2021 - June 2021</p>
+            </div>
+            <div>
+              <p>Installation, examination, testing and repair of equipment, computer
+                components and peripherals. Testing the functionality of computers, identifying
+                problems and replacing damaged components and parts.
+                Creating web pages with WordPress content management system.
+                Designing and editing images with Adobe Photoshop and Illustrator.</p>
+              <aside class="l-flex l-flex--vertical-centered l-flex--wrap l-flex--gap-2 g--padding-top-8">
+                <a href="https://www.adobe.com/es/products/photoshop.html" target="_blank" rel="noopener"
+                  class="c-badge">Photoshop</a>
+                <a href="https://www.adobe.com/es/products/illustrator.html" target="_blank" rel="noopener"
+                  class="c-badge">Illustrator</a>
+                <a href="https://wordpress.com/es/" class="c-badge">Wordpress</a>
+                <a href="#experience" class="c-badge">Repair of computers</a>
+                <a href="#experience" class="c-badge">Customer service</a>
+              </aside>
+            </div>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="projects" class="c-section">
+      <h2><i class="bi bi-braces"></i> Projects</h2>
+      <ul class="c-card">
+        <li class="c-card__item" id="card_1">
+          <div class="c-card__content">
+            <img class="c-card__img" src="assets/images/wordle.webp" alt="Wordle app">
+            <div class="c-card__content-text">
+              <h3>Wordle - Word Guessing Game Application</h3>
+              <aside class="l-flex l-flex--vertical-centered l-flex--wrap l-flex--gap-2 g--padding-block-4">
+                <a href="https://www.mysql.com/" target="_blank" rel="noopener" class="c-badge c-badge--bg-primary">MySQL</a>
+                <a href="https://spring.io/" target="_blank" rel="noopener" class="c-badge c-badge--bg-primary">Spring</a>
+                <a href="https://angular.io/" target="_blank" rel="noopener"
+                  class="c-badge c-badge--bg-primary">Angular</a>
+              </aside>
+              <p>Guess the Word is a game similar to Wordle, in which the player has to guess a secret five-letter word
+                in five attempts. The game gives the player clues about whether the letters they have entered are
+                correct, incorrect, or in the wrong position.</p>
+                <a href="https://github.com/paufandos/AdivinaLaPalabra" target="_blank" rel="noopener"
+                class="c-badge c-badge--btn"><i
+                class="bi bi-github"></i> Code</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="c-card__item" id="card_2">
+          <div class="c-card__content">
+            <img class="c-card__img" src="assets/images/educafe.jpg" alt="EduCafe">
+            <div class="c-card__content-text">
+              <h3>EduCafe - Management of school cafeterias</h3>
+              <aside class="l-flex l-flex--vertical-centered l-flex--wrap l-flex--gap-2 g--padding-block-4">
+                <a href="https://www.mysql.com/" target="_blank" rel="noopener" class="c-badge c-badge--bg-primary">MySQL</a>
+                <a href="https://laravel.com/" target="_blank" rel="noopener" class="c-badge c-badge--bg-primary">Laravel</a>
+                <a href="https://angular.io/" target="_blank" rel="noopener"
+                  class="c-badge c-badge--bg-primary">Angular</a>
+              </aside>
+              <p>EduCafe is a web application designed for the management of school cafeterias in which cafeterias can
+                put their products on sale to sell them, so that these establishments can control the stock of their
+                products and avoid queues during breaks.</p>
+                <a href="https://github.com/paufandos/EduCafe" target="_blank" rel="noopener"
+                  class="c-badge c-badge--btn"><i
+                  class="bi bi-github"></i> Code</a>
+            </div>
+          </div>
+        </li>
       </ul>
     </section>
 
-    <section id="projects">
-      <h2><i class="bi bi-braces"></i> Projects</h2>
-      <article>
-        <header>
-          <h4>App 1</h4>
-        </header>
-        <p>Application 1 description/p></p>
-        <footer>
-          <small>Technologies used: HTML, CSS, JS, PHP</small>
-        </footer>
-      </article>
-
-      <article>
-        <header>
-          <h4>App 2</h4>
-        </header>
-        <p>Application 2 description/p></p>
-        <footer><small>Technologies used: HTML, CSS, JS, PHP</small></footer>
-      </article>
-
-      <article>
-        <header>
-          <h4>App 3</h4>
-        </header>
-        <p>Application 3 description/p></p>
-        <footer><small>Technologies used: HTML, CSS, JS, PHP</small></footer>
-      </article>
+    <section id="studies" class="c-section">
+      <h2><i class="bi bi-mortarboard"></i> Studies</h2>
     </section>
 
-    <section id="about-me">
+    <section id="studies" class="c-section">
+      <h2><i class="bi bi-award"></i> Awards</h2>
+    </section>
+
+    <section id="about-me" class="c-section">
       <h2><i class="bi bi-person-workspace"></i> About me</h2>
-      <p class="description">
-        I'm a 21 year old guy, eager to <span>develop myself</span> in the working world and grow professionally,
-        passionate about
-        <span>technology and programming</span>, I am very curious and I like to investigate the why of things. I am
-        able to <span>work in
-          a team</span> and contribute my knowledge to improve it.
-      </p>
-      <cite>"Any fool can write code that a computer can understand. Good programmers write code that humans can
-        understand." - Martin Fowler</cite>
     </section>
-
   </main>
   <footer>
     Copyright &copy; 2024 - Developed by Pau Fandos
-    <a href="mailto:fandosdev@gmail.com">Send mail</a>
   </footer>
 </body>
 

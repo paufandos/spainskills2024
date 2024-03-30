@@ -1,0 +1,10 @@
+.c-remarkable {
+    font-weight: var(--heading-font-weight);
+    font-size: inherit;
+
+    color: var(--primary-color-500);
+
+    &--secondary {
+        color: var(--secondary-color-400);
+    }
+}

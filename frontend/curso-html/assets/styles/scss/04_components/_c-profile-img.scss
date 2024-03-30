@@ -1,0 +1,8 @@
+.c-profile-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+
+    border-radius: var(--border-radius-full);
+    @include box-shadow(var(--light-box-shadow-color));
+}

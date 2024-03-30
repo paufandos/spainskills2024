@@ -1,0 +1,40 @@
+.c-badge {
+  display: inline-block;
+  padding-block: var(--padding-1);
+  padding-inline: var(--padding-6);
+  border-radius: var(--border-radius-6);
+  border: 1px solid var(--secondary-color-400);
+  background-color: var(--secondary-color-500);
+
+  font-size: 0.9rem;
+  line-height: 1.25rem;
+
+  cursor: pointer;
+
+  &--bg-dark {
+    border: 0;
+    background-color: var(--bg-primary-color-without-opcity-1);
+  }
+
+  &--bg-primary {
+    border: 1px solid var(--primary-color-500);
+    background-color: var(--primary-color-600);
+  }
+
+  &--btn {
+    padding-block: var(--padding-5);
+    border-radius: var(--border-radius-4);
+    margin-top: var(--margin-5);
+
+    border: 1px solid var(--primary-color-700);
+    background-color: var(--primary-color-800);
+  }
+
+  &--hover-animation {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
