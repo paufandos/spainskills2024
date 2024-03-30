@@ -19,49 +19,50 @@
   <meta name="theme-color" content="#0077a8" />
 
   <link rel="shortcut icon" href="./assets/images/portfolio_photo.jpeg" type="image/jpg" />
-  <style>
-    body {
-      background: #f0f0f0;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/styles/00_reset.css">
+  <link rel="stylesheet" href="./assets/styles/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
-  <header>
-    <h1>Pau Fandos Portfolio</h1>
+  <header class="navbar">
     <nav>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
+      <i class="bi bi-braces-asterisk logo"></i>
+      <a href="#projects">About me</a>
       <a href="https://github.com/paufandos" target="_blank" rel="noreferrer">GitHub</a>
     </nav>
   </header>
   <main>
-    <p>
-      +2 years of experience as a <strong>Software Developer</strong>.
-      Passionate about technology and programming
-    </p>
-    <h2 id="experience">Experience</h2>
-    <ul>
-      <li>Sopra Steria - 2023</li>
-      <li>Imagina ITS - 2021</li>
-    </ul>
+    <section class="presentation">
+      <div class="availability-wrapper">
+        <img src="./assets/images/portfolio_photo.jpeg" alt="Pau Fandos Portfolio Photo Image" />
+        <a href="https://www.soprasteria.es/" class="availability ">Working on Sopra Steria</a>
+      </div>
 
-    <img src="./assets/images/portfolio_photo.jpeg" alt="Pau Fandos Portfolio Photo Image" width="250" />
+      <h1>Hey, I'm <span>{ Pau Fandos }</span></h1>
+      <p class="description">
+        I'm a 21 year old guy, eager to <span>develop myself</span> in the working world and grow professionally,
+        passionate about
+        <span>technology and programming</span>, I am very curious and I like to investigate the why of things. I am
+        able to <span>work in
+          a team</span> and contribute my knowledge to improve it.
+      </p>
+      <cite>"Any fool can write code that a computer can understand. Good programmers write code that humans can
+        understand." - Martin Fowler</cite>
+    </section>
 
-    <h2 id="projects">Projects</h2>
-    <aside>
-      <header>
-        <h3>My favourite technologies</h3>
-      </header>
-      <ol>
-        <li>Kotlin</li>
-        <li>Spring</li>
-        <li>SQL</li>
-        <li>Angular</li>
-      </ol>
-    </aside>
+    <section id="experience">
+      <h2><i class="bi bi-laptop"></i> Experience</h2>
+      <ul>
+        <li>Sopra Steria - 2023</li>
+        <li>Imagina ITS - 2021</li>
+      </ul>
+    </section>
 
-    <section>
+    <section id="projects">
+      <h2><i class="bi bi-braces"></i> Projects</h2>
       <article>
         <header>
           <h4>App 1</h4>
@@ -89,30 +90,19 @@
       </article>
     </section>
 
-    <section>
-      <h2>Contact form</h2>
-      <form method="post" action="/">
-        <fieldset>
-          <legend>Personal information</legend>
-
-          <label for="name">Name:
-            <input type="text" name="name" id="name" placeholder="Pau Fandos Gorris" required>
-          </label>
-          <label for="email">Email:
-            <input type="email" name="email" id="email" placeholder="fandosdev@gmail.com" required>
-          </label>
-        </fieldset>
-
-        <fieldset>
-          <legend>Additional information</legend>
-
-          <label for="phone">Phone:
-            <input type="tel" name="phone" id="phone" placeholder="612345678" required>
-          </label>
-        </fieldset>
-        <button type="submit">Send contact</button>
-      </form>
+    <section id="about-me">
+      <h2><i class="bi bi-person-workspace"></i> About me</h2>
+      <p class="description">
+        I'm a 21 year old guy, eager to <span>develop myself</span> in the working world and grow professionally,
+        passionate about
+        <span>technology and programming</span>, I am very curious and I like to investigate the why of things. I am
+        able to <span>work in
+          a team</span> and contribute my knowledge to improve it.
+      </p>
+      <cite>"Any fool can write code that a computer can understand. Good programmers write code that humans can
+        understand." - Martin Fowler</cite>
     </section>
+
   </main>
   <footer>
     Copyright &copy; 2024 - Developed by Pau Fandos
