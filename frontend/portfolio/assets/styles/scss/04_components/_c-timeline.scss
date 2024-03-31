@@ -10,11 +10,19 @@
 
   &__point {
     position: absolute;
-    left: -25px;
+    left: -23px;
     top: -10px;
     font-size: 4rem;
     font-weight: bold;
     color: var(--primary-color-500);
+
+    @media (min-width: 768px) {
+      left: -24px;
+    }
+
+    @media (min-width: 992px) {
+      left: -25px;
+    }
   }
 
   h3 {
@@ -36,16 +44,5 @@
     line-height: 1.75rem;
     margin: 0;
   }
-}
-
-@keyframes reveal {
-	from {
-		opacity: 0;
-		clip-path: inset(0% 0% 100% 0%);
-	}
-	to {
-		opacity: 1;
-		clip-path: inset(0% 0% 0% 0%);
-	}
 }
 

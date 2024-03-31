@@ -1,0 +1,11 @@
+.l-main-centered-content {
+  margin-inline: var(--margin-7);
+
+  @media (min-width: 762px) {
+    margin-inline: var(--margin-10);
+  }
+
+  @media (min-width: 992px) {
+    margin-inline: 20dvw;
+  }
+}

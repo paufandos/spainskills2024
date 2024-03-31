@@ -1,7 +1,7 @@
 .c-badge {
   display: inline-block;
   padding-block: var(--padding-1);
-  padding-inline: var(--padding-6);
+  padding-inline: var(--padding-2);
   border-radius: var(--border-radius-6);
   border: 1px solid var(--secondary-color-400);
   background-color: var(--secondary-color-500);
@@ -10,6 +10,14 @@
   line-height: 1.25rem;
 
   cursor: pointer;
+
+  @media (min-width:768px) {
+    padding-inline: var(--padding-4);
+  }
+
+  @media (min-width:1100px) {
+    padding-inline: var(--padding-6);
+  }
 
   &--bg-dark {
     border: 0;

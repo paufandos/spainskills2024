@@ -1,4 +1,5 @@
 .l-timeline {
     display: grid;
     grid-template-columns: 2fr 3fr;
+    gap: var(--gap-4);
 }

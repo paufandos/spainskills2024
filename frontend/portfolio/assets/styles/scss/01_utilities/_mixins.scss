@@ -4,8 +4,8 @@
     box-shadow: 0px 5px 15px $color;
   }
 
-  @mixin small-shadow($color) {
-    -webkit-box-shadow: 0px 4px 8px $color;
-    -moz-box-shadow: 0px 4px 8px $color;
-    box-shadow: 0px 4px 8px $color;
+  @mixin small-box-shadow($color) {
+    -webkit-box-shadow: 0px 3px 6px $color;
+    -moz-box-shadow: 0px 3px 6px $color;
+    box-shadow: 0px 3px 6px $color;
   }

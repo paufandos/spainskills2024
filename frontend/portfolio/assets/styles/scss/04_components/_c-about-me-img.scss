@@ -1,0 +1,26 @@
+.c-about-me-img {
+    object-fit: cover;
+    border-radius: var(--border-radius-4);
+    box-shadow: rgba(0, 234, 255, 0.257) 0px 8px 24px;
+    transform: rotate(0);
+    margin-bottom: var(--margin-10);
+
+
+    &--right {
+        @media (min-width: 768px) {
+            margin-bottom: var(--margin-0);
+            transform: rotate(-2deg);
+            height: 40dvh;
+            min-width: 20dvw;
+        }
+    }
+
+    &--left {
+        @media (min-width: 768px) {
+            margin-bottom: var(--margin-0);
+            transform: rotate(2deg);
+            height: 40dvh;
+            min-width: 20dvw;
+        }
+    }
+}
