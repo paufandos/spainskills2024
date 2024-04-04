@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-black p-3 shadow-sm position-fixed w-100 d-block" style="z-index: 2">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="'/home'"><strong>{{ 'Angular course' | uppercase }}</strong></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" [routerLink]="'/home'">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" [routerLink]="'/products'">Products</a>
+        </li>
+        <li class="nav-item d-inline d-lg-none" *ngIf="isUserLogged()">
+          <a class="nav-link" aria-current="page" [routerLink]="'/mi-profile'">Mi perfil</a>
+        </li>
+        <li class="nav-item d-inline d-lg-none" *ngIf="isUserLogged()">
+          <button class="btn btn-danger" (click)="logOut()">Cerrar sesion</button>
+        </li>
+      </ul>
+      <div class="dropleft d-none d-lg-block" *ngIf="isUserLogged()">
+        <i class="bi bi-person-circle user-info"
+          data-bs-toggle="dropdown" aria-expanded="false"></i>
+        <ul class=" dropdown-menu adjust-left">
+          <li><a class="dropdown-item" href="#">Mi perfil</a></li>
+          <div class="dropdown-divider"></div>
+          <li class="m-0 px-2"><button class="btn btn-danger m-0 w-100" (click)="logOut()">Cerrar sesion</button></li>
+          </ul>
+      </div>
+
+    </div>
+  </div>
+</nav>
