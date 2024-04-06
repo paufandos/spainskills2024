@@ -1,0 +1,21 @@
+.logo-spainskills {
+  width: 20%;
+
+  @media (width > 576px) {
+    width: 10%;
+  }
+}
+
+.blur {
+  width: 90%;
+
+  @media (width > 992px) {
+    width: auto;
+  }
+}
+
+.nav-item {
+  :hover {
+    cursor: pointer !important;
+  }
+}

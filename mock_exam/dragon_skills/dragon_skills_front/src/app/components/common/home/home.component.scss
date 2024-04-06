@@ -1,0 +1,42 @@
+.presentation-wrapper {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  div, p {
+    width: 90%;
+    margin-bottom: 5dvh;
+  }
+}
+
+@media (width > 768px) {
+  .presentation-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    margin-inline: 20dvw;
+  }
+}
+
+h1,
+h2,
+p {
+  text-shadow: 0px 0px 12px rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+
+p {
+  font-size: 1.25rem;
+}
+
+.backgroud-img {
+  background-image: url("../../../../assets/images/people-meeting-community-center.jpg");
+  background-size: cover;
+}
+
+.remarkable {
+  text-shadow: 0px 0px 12px rgb(141, 191, 255);
+}

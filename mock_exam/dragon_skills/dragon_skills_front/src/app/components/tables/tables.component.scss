@@ -1,0 +1,36 @@
+.centered {
+  display: grid;
+  place-content: center;
+  min-height: 80dvh;
+  padding-top: 20dvh;
+}
+
+.margin-20dvw {
+  margin-inline: 20dvw;
+}
+
+.table-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.table {
+  width: 50px;
+  height: 30px;
+
+  background-color: black;
+  border: 1px solid white;
+  border-radius: 6px;
+
+  &--free {
+    border-color: greenyellow;
+    box-shadow: 0px 2px 4px greenyellow;
+  }
+
+  &--reserved {
+    border-color: red;
+    box-shadow: 0px 2px 4px red;
+  }
+}

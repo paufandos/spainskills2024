@@ -1,0 +1,155 @@
+<div
+  class="d-flex justify-content-center align-items-start margin-block-20dvh scrolleable margin-20dvw rounded-4 p-2 bg-dark"
+>
+  <table class="table table-dark table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Ancho</th>
+        <th scope="col">Alto</th>
+        <th scope="col">Minimo jugadores</th>
+        <th scope="col">Maximo jugadores</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let game of games">
+        <th scope="row">{{ game.id }}</th>
+        <td>{{ game.name }}</td>
+        <td>{{ game.description }}</td>
+        <td>{{ game.width }}</td>
+        <td>{{ game.height }}</td>
+        <td>{{ game.minNumPlayers }}</td>
+        <td>{{ game.maxNumPlayers }}</td>
+        <td
+          data-bs-toggle="modal"
+          data-bs-target="#editGameModal"
+          (click)="setCurrentGame(game.id)"
+        >
+          <i class="btn btn-warning bi bi-pencil-square"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="editGameModal"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="editGameModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="editGameModalLabel">Editar juego</h1>
+        <button
+          id="editGameModalClose"
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form class="form" #updateGameForm="ngForm" (ngSubmit)="updateGame()">
+          <div class="mb-3">
+            <label for="name" class="form-label">Nombre</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              [(ngModel)]="currentGame.name"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Descripcion</label>
+            <input
+              type="text"
+              class="form-control"
+              id="description"
+              [(ngModel)]="currentGame.description"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            />
+          </div>
+          <div
+            class="d-flex justify-content-between align-items-center mb-3 gap-2"
+          >
+            <div>
+              <label for="width" class="form-label">Anchura</label>
+              <input
+                type="number"
+                class="form-control"
+                id="width"
+                [(ngModel)]="currentGame.width"
+                [ngModelOptions]="{ standalone: true }"
+                required
+              />
+            </div>
+            <div>
+              <label for="height" class="form-label">Altura</label>
+              <input
+                type="number"
+                class="form-control"
+                id="height"
+                [(ngModel)]="currentGame.height"
+                [ngModelOptions]="{ standalone: true }"
+                required
+              />
+            </div>
+          </div>
+          <div
+            class="d-flex justify-content-between align-items-center mb-3 gap-2"
+          >
+            <div>
+              <label for="minNumPlayers" class="form-label"
+                >Nº mínimo jugadores</label
+              >
+              <input
+                type="number"
+                class="form-control"
+                id="minNumPlayers"
+                [(ngModel)]="currentGame.minNumPlayers"
+                [ngModelOptions]="{ standalone: true }"
+                required
+              />
+            </div>
+            <div>
+              <label for="maxNumPlayers" class="form-label"
+                >Nº máximo jugadores</label
+              >
+              <input
+                type="number"
+                class="form-control"
+                id="maxNumPlayers"
+                [(ngModel)]="currentGame.maxNumPlayers"
+                [ngModelOptions]="{ standalone: true }"
+                required
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+              #closeButton
+            >
+              Close
+            </button>
+            <button type="submit" class="btn btn-primary">Editar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

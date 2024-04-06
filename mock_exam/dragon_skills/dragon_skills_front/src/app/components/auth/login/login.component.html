@@ -1,0 +1,15 @@
+<form class="form">
+  <h2 class="text-center fw-bold mb-4 px-3 py-3 text-white bg-dark rounded-3"><i class="bi bi-person-circle"></i> DRAGON SKILLS</h2>
+  <div class="mb-3">
+    <label for="username" class="form-label text-white">Usuario</label>
+    <input type="text" class="form-control" id="username" [(ngModel)]="username" [ngModelOptions]="{standalone: true}" required>
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label text-white">Contraseña</label>
+    <input type="password" class="form-control" id="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" required>
+  </div>
+  <div class="mb-3 c-link-hover">
+    <a [routerLink]="'/register'">¿Aún no estas registrado? Registrate aquí.</a>
+  </div>
+  <button type="submit" (click)="logIn()" class="btn btn-primary">Acceder</button>
+</form>

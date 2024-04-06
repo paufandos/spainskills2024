@@ -1,0 +1,12 @@
+.not-found {
+  width: 100dvw;
+  height: 100dvh;
+
+  display: grid;
+  place-content: center;
+  text-shadow: 0px 2px 16px rgb(197, 197, 197);
+
+  i {
+    font-size: 64px;
+  }
+}
