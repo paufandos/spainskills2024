@@ -14,7 +14,9 @@ import { log } from 'console';
   styleUrl: './games.component.scss',
 })
 export class GamesComponent implements OnInit {
-  @ViewChild('closeButton') closeUpdateModal!: ElementRef;
+  @ViewChild('closeUpdateGameModalButton') closeUpdateGameModal!: ElementRef;
+  @ViewChild('closeNewGameModalButton') closeNewGameModal!: ElementRef;
+
   games: Game[] = [];
   currentGame: Game = {
     id: '',
@@ -25,6 +27,17 @@ export class GamesComponent implements OnInit {
     minNumPlayers: 0,
     maxNumPlayers: 0,
   };
+  newGame: Game = {
+    id: '',
+    name: '',
+    description: '',
+    width: 0,
+    height: 0,
+    minNumPlayers: 0,
+    maxNumPlayers: 0,
+  };
+
+  numPlayersError = false;
 
   constructor(private gamesService: GameService) {}
 
@@ -41,8 +54,28 @@ export class GamesComponent implements OnInit {
   }
 
   updateGame() {
+    this.isNumPlayersError();
+    if (this.numPlayersError) return;
     this.gamesService.updateGame(this.currentGame);
-    this.closeUpdateModal.nativeElement.click();
+    this.closeUpdateGameModal.nativeElement.click();
     this.games = this.gamesService.getAllGames();
+  }
+
+  createGame() {
+    this.isNumPlayersError();
+    if (this.numPlayersError) return;
+    this.newGame.id = Math.floor(Math.random() * 1000).toString();
+    this.gamesService.createGame(this.newGame);
+    this.closeNewGameModal.nativeElement.click();
+    this.games = this.gamesService.getAllGames();
+  }
+
+  isNumPlayersError() {
+    if (this.newGame.minNumPlayers <= this.newGame.maxNumPlayers) {
+      this.numPlayersError = false;
+      return;
+    }
+
+    this.numPlayersError = true;
   }
 }

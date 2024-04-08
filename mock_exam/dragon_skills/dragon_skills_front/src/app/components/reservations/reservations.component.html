@@ -1,6 +1,6 @@
 <div class="centered margin-20dvw">
   <div class="d-flex justify-content-between align-items-center my-4">
-    <button class="btn btn-secondary" *ngIf="isUserAdmin()">
+    <button class="btn btn-secondary" [hidden]="!admin">
       <i class="bi bi-search"></i> Filter
     </button>
     <button
@@ -60,6 +60,7 @@
               id="startDate"
               [(ngModel)]="reservation.startDate"
               name="startDate"
+              (change)="isDatesError()"
               required
             />
           </div>
@@ -71,18 +72,11 @@
               class="form-control"
               id="endDate"
               [(ngModel)]="reservation.endDate"
+              (change)="isDatesError()"
               name="endDate"
               required
             />
-            <div
-              class="text-danger"
-              *ngIf="
-                !isReservationSameDay(
-                  reservation.startDate,
-                  reservation.endDate
-                ) || reservation.startDate > reservation.endDate
-              "
-            >
+            <div class="text-danger" *ngIf="datesError">
               La fecha de fin debe estar en el mismo día que la fecha de inicio
             </div>
           </div>
@@ -103,52 +97,55 @@
                   >Tamaño de mesa personalizado</label
                 >
               </div>
-              <div>
-                <div class="mb-3">
-                  <label for="sizeWidth" class="form-label">Ancho</label>
-                  <input
-                    [disabled]="!sizeRadioButton"
-                    type="number"
-                    min="0"
-                    max="200"
-                    class="form-control"
-                    id="sizeWidth"
-                    [(ngModel)]="reservation.width"
-                    name="sizeWidth"
-                    required
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="sizeHeight" class="form-label">Alto</label>
-                  <input
-                    [disabled]="!sizeRadioButton"
-                    type="number"
-                    min="0"
-                    max="200"
-                    class="form-control"
-                    id="sizeHeight"
-                    [(ngModel)]="reservation.height"
-                    name="sizeHeight"
-                    required
-                  />
-                </div>
+            </div>
+            <div>
+              <div class="mb-3">
+                <label for="sizeWidth" class="form-label">Ancho</label>
+                <input
+                  [disabled]="!sizeRadioButton"
+                  type="number"
+                  min="0"
+                  max="200"
+                  class="form-control"
+                  id="sizeWidth"
+                  [(ngModel)]="reservation.width"
+                  name="sizeWidth"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="sizeHeight" class="form-label">Alto</label>
+                <input
+                  [disabled]="!sizeRadioButton"
+                  type="number"
+                  min="0"
+                  max="200"
+                  class="form-control"
+                  id="sizeHeight"
+                  [(ngModel)]="reservation.height"
+                  name="sizeHeight"
+                  required
+                />
               </div>
             </div>
+          </div>
 
-            <div>
-              <div class="form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="gameRadioButton"
-                  [(ngModel)]="gameRadioButton"
-                  name="gameRadioButton"
-                  required
-                  (change)="changeGameRadioButtonValue()"
-                />
-                <label for="gameRadioButton" class="form-check-label"
-                  >Juego</label
-                >
+          <div>
+            <div class="form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="gameRadioButton"
+                [(ngModel)]="gameRadioButton"
+                name="gameRadioButton"
+                required
+                (change)="onChangeGame()"
+              />
+              <label for="gameRadioButton" class="form-check-label"
+                >Juego</label
+              >
+              <div class="text-danger" *ngIf="gameError">
+                Debes elegir un juego.
               </div>
               <div>
                 <div class="mb-3">
@@ -161,6 +158,7 @@
                     class="form-select"
                     [(ngModel)]="reservation.game"
                     name="gameSelect"
+                    (change)="isGameError()"
                     required
                   >
                     <option value="falleraCalavera">Fallera calavera</option>
@@ -174,6 +172,7 @@
 
           <div class="modal-footer">
             <button
+              #closeButton
               type="button"
               class="btn btn-secondary"
               data-bs-dismiss="modal"
@@ -183,7 +182,6 @@
             <button
               type="submit"
               class="btn btn-primary"
-              data-bs-dismiss="modal"
               (click)="doTableReservation()"
             >
               Reservar

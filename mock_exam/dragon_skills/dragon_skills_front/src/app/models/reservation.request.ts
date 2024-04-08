@@ -1,6 +1,6 @@
 export interface ReservationRequest {
-  startDate: Date,
-  endDate: Date,
+  startDate: string,
+  endDate: string,
   userId: string,
   width: number,
   height: number,

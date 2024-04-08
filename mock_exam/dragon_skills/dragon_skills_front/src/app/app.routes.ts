@@ -8,6 +8,7 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { loggedGuard } from './guard/logged.guard';
 import { adminGuard } from './guard/admin.guard';
+import { TableDetailComponent } from './components/tables/table-detail/table-detail.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -16,5 +17,6 @@ export const routes: Routes = [
   { path: 'reservations', component: ReservationsComponent, canActivate: [loggedGuard] },
   { path: 'games', component: GamesComponent, canActivate: [loggedGuard, adminGuard] },
   { path: 'tables', component: TablesComponent, canActivate: [loggedGuard, adminGuard] },
+  { path: 'tables/:id', component: TableDetailComponent, canActivate: [loggedGuard, adminGuard] },
   { path: '**', component: NotFoundComponent },
 ];

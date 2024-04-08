@@ -1,0 +1,114 @@
+<section
+  class="d-flex flex-column justify-content- align-items-start margin-block-20dvh margin-20dvw m-sm"
+>
+  <button
+    class="btn btn-success mb-2"
+    data-bs-toggle="modal"
+    data-bs-target="#newReservationModal"
+  >
+    <i class="bi bi-plus-square-fill"></i> Nueva reserva
+  </button>
+  <div
+    class="table-responsive d-flex justify-content-md-center align-items-start scrolleable rounded-4 bg-dark p-1"
+  >
+    <table class="table table-dark table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Fecha inicio</th>
+          <th scope="col">Fecha fin</th>
+          <th scope="col">Usuario</th>
+          <th scope="col">Ancho</th>
+          <th scope="col">Alto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reservation of tableReservations">
+          <th scope="row">{{ reservation.id }}</th>
+          <td>{{ reservation.startDate | date : "dd/MM/yyyy" }}</td>
+          <td>{{ reservation.endDate | date : "dd/MM/yyyy" }}</td>
+          <td>{{ reservation.userId }}</td>
+          <td>{{ reservation.width }}</td>
+          <td>{{ reservation.height }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div
+  class="modal fade"
+  id="newReservationModal"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="newReservationModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="newReservationModalLabel">
+          Nueva resreva
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form
+          class="form"
+          #newReservationForm="ngForm"
+          (ngSubmit)="createReservation()"
+        >
+          <div
+            class="d-flex justify-content-between align-items-center mb-3 gap-2"
+          >
+            <div>
+              <label for="startDate" class="form-label">Fecha de inicio</label>
+              <input
+                type="datetime-local"
+                class="form-control"
+                id="startDate"
+                (change)="validateDates()"
+                [(ngModel)]="newReservation.startDate"
+                [ngModelOptions]="{ standalone: true }"
+                required
+              />
+            </div>
+            <div>
+              <label for="endDate" class="form-label">Fecha de fin</label>
+              <input
+                type="datetime-local"
+                class="form-control"
+                id="endDate"
+                (change)="validateDates()"
+                [(ngModel)]="newReservation.endDate"
+                [ngModelOptions]="{ standalone: true }"
+                required
+              />
+            </div>
+          </div>
+          <div class="text-danger form-text" *ngIf="hasDatesError">
+            La fecha de inicio debe ser anterior que la de fin y ha de estar en
+            el mismo dia.
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+              #closeNewReservationModal
+            >
+              Cerrar
+            </button>
+            <button type="submit" class="btn btn-primary">Crear</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

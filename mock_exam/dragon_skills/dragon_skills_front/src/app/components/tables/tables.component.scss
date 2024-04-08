@@ -1,8 +1,8 @@
 .centered {
   display: grid;
   place-content: center;
-  min-height: 80dvh;
-  padding-top: 20dvh;
+  min-height: 70dvh;
+  padding-block: 15dvh;
 }
 
 .margin-20dvw {
@@ -17,9 +17,6 @@
 }
 
 .table {
-  width: 50px;
-  height: 30px;
-
   background-color: black;
   border: 1px solid white;
   border-radius: 6px;

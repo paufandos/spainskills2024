@@ -1,0 +1,145 @@
+<div class="centered margin-20dvw">
+  <div class="d-flex justify-content-start align-items-center my-4">
+    <button
+      class="btn btn-success"
+      type="button"
+      data-bs-toggle="modal"
+      data-bs-target="#newTableModal"
+    >
+      <i class="bi bi-book"></i> Nueva Mesa
+    </button>
+  </div>
+  <div class="dropdown table-layout">
+    <div
+      data-bs-toggle="dropdown"
+      *ngFor="let table of tables"
+      class="table m-2"
+      [ngClass]="{
+        'table--free': table.free,
+        'table--reserved': !table.free
+      }"
+      [style.width.px]="table.width"
+      [style.height.px]="table.height"
+    >
+      <ul class="dropdown-menu">
+        <li>
+          <a class="dropdown-item" (click)="goToTableDetail(table.id)"
+            ><i class="bi bi-eye"></i> Ver reservas</a
+          >
+        </li>
+        <li>
+          <a
+            class="dropdown-item"
+            data-bs-toggle="modal"
+            data-bs-target="#deleteTableModal"
+            (click)="setCurrentTable(table.id)"
+            ><i class="bi bi-trash"></i> Eliminar</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="newTableModal"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="newTableModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="newTableModalLabel">Modal title</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form class="form" #newTableForm="ngForm" (ngSubmit)="createNewTable()">
+          <div class="mb-3">
+            <label for="width" class="form-label">Ancho</label>
+            <input
+              type="number"
+              min="0"
+              class="form-control"
+              id="width"
+              [(ngModel)]="newTable.width"
+              [ngModelOptions]="{ standalone: true }"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="height" class="form-label">Alto</label>
+            <input
+              type="number"
+              min="0"
+              class="form-control"
+              id="height"
+              [(ngModel)]="newTable.height"
+              [ngModelOptions]="{ standalone: true }"
+            />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+              #closeNewTableModal
+            >
+              Cerrar
+            </button>
+            <button type="submit" class="btn btn-primary">Crear</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="deleteTableModal"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="deleteTableModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="deleteTableModalLabel">
+          Eliminar mesa {{ currentTable.id }}
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div
+          class="d-flex flex-column justify-content-center align-items-center"
+        >
+          <i class="bi bi-trash text-danger fw-bold fs-1"></i>
+          ¿Estas seguro de eliminar esta mesa?
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" #closeDeleteTableModal>
+          No
+        </button>
+        <button type="button" class="btn btn-danger" (click)="deleteTable()">
+          Si, eliminar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

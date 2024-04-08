@@ -16,6 +16,10 @@ export class GameService {
     this.games[index] = { ...gameToUpdate };
   }
 
+  createGame(gameToCreate: Game) {
+    this.games.push(gameToCreate);
+  }
+
   games: Game[] = [
     {
       id: Math.floor(Math.random() * 100).toString(),

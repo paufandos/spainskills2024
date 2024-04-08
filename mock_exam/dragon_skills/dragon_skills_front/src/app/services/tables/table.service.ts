@@ -1,28 +1,40 @@
 import { Injectable } from '@angular/core';
 import { Table } from '../../models/table';
-import { randomInt } from 'crypto';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TableService {
-  constructor() {}
+  constructor(private router: Router) {}
 
   tables: Array<Table> = [];
 
   getAllTables() {
-    for (let i = 0; i < 132; i++) {
+    for (let i = 0; i < 50; i++) {
       this.tables.push({
         id: i.toLocaleString(),
-        width: Math.floor(Math.random() * 50),
-        height: Math.floor(Math.random() * 30),
+        width: Math.floor(Math.random() * 25),
+        height: Math.floor(Math.random() * 15),
         free: this.generarBooleanoAleatorio(),
       });
     }
     return this.tables;
   }
 
+  getTableById(id: string): Table | undefined {
+    this.getAllTables();
+    const tableFinded = this.tables.find((table) => table.id === id);
+
+    if (!tableFinded) {
+      this.router.navigate(['/notfound']);
+      return;
+    }
+
+    return tableFinded;
+  }
+
   generarBooleanoAleatorio(): boolean {
-    return Math.random() < 0.5; // Devuelve true si el número generado es menor que 0.5, de lo contrario, devuelve false
+    return Math.random() < 0.5;
   }
 }
