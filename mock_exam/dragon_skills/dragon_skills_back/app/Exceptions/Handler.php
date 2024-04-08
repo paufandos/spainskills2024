@@ -2,8 +2,8 @@
 
 namespace App\Exceptions;
 
+use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Throwable;
 
 class Handler extends ExceptionHandler
 {
@@ -23,8 +23,8 @@ class Handler extends ExceptionHandler
      */
     public function register(): void
     {
-        $this->reportable(function (Throwable $e) {
-            //
+        $this->reportable(function (Exception $e) {
+            return response()->json(['message' => 'Ups! Algo ha ido mal, no se ha podido realizar la accion.'], 500);
         });
     }
 }
